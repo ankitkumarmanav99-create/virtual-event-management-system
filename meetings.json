@@ -1,0 +1,318 @@
+[
+  {
+    "id": "demo_meeting_1",
+    "code": "DEMO123ABC",
+    "hostId": "1",
+    "hostName": "Demo User",
+    "title": "Weekly Team Sync",
+    "description": "Weekly team synchronization meeting to discuss progress and blockers",
+    "createdAt": "2024-01-15T10:00:00.000Z",
+    "startedAt": "2024-01-15T10:05:00.000Z",
+    "endedAt": null,
+    "active": true,
+    "type": "scheduled",
+    "settings": {
+      "requireAuth": true,
+      "allowScreenShare": true,
+      "allowRecording": true,
+      "maxParticipants": 25,
+      "waitingRoom": false,
+      "muteOnEntry": false,
+      "videoOnEntry": true
+    },
+    "participants": [
+      {
+        "userId": "1",
+        "userName": "Demo User",
+        "joinedAt": "2024-01-15T10:05:00.000Z",
+        "leftAt": null,
+        "isHost": true,
+        "permissions": {
+          "canShareScreen": true,
+          "canRecord": true,
+          "canChat": true,
+          "canInvite": true
+        }
+      },
+      {
+        "userId": "3",
+        "userName": "Alex Johnson",
+        "joinedAt": "2024-01-15T10:06:00.000Z",
+        "leftAt": null,
+        "isHost": false,
+        "permissions": {
+          "canShareScreen": true,
+          "canRecord": false,
+          "canChat": true,
+          "canInvite": false
+        }
+      },
+      {
+        "userId": "4",
+        "userName": "Sarah Miller",
+        "joinedAt": "2024-01-15T10:07:00.000Z",
+        "leftAt": null,
+        "isHost": false,
+        "permissions": {
+          "canShareScreen": true,
+          "canRecord": false,
+          "canChat": true,
+          "canInvite": false
+        }
+      }
+    ],
+    "chat": [
+      {
+        "id": "msg_1",
+        "userId": "1",
+        "userName": "Demo User",
+        "message": "Welcome everyone to our weekly sync!",
+        "type": "text",
+        "timestamp": "2024-01-15T10:05:30.000Z",
+        "isSystem": false
+      },
+      {
+        "id": "msg_2",
+        "userId": "3",
+        "userName": "Alex Johnson",
+        "message": "Good morning everyone!",
+        "type": "text",
+        "timestamp": "2024-01-15T10:06:15.000Z",
+        "isSystem": false
+      },
+      {
+        "id": "msg_3",
+        "userId": "system",
+        "userName": "System",
+        "message": "Sarah Miller joined the meeting",
+        "type": "system",
+        "timestamp": "2024-01-15T10:07:00.000Z",
+        "isSystem": true
+      }
+    ],
+    "recordings": [],
+    "statistics": {
+      "totalDuration": 0,
+      "peakParticipants": 3,
+      "messagesSent": 3,
+      "screenShares": 0
+    }
+  },
+  {
+    "id": "demo_meeting_2",
+    "code": "VIDEO456DEF",
+    "hostId": "2",
+    "hostName": "Admin User",
+    "title": "Product Demo",
+    "description": "Demo of new product features for stakeholders",
+    "createdAt": "2024-01-14T14:00:00.000Z",
+    "startedAt": "2024-01-14T14:00:00.000Z",
+    "endedAt": "2024-01-14T15:30:00.000Z",
+    "active": false,
+    "type": "instant",
+    "settings": {
+      "requireAuth": true,
+      "allowScreenShare": true,
+      "allowRecording": true,
+      "maxParticipants": 50,
+      "waitingRoom": true,
+      "muteOnEntry": true,
+      "videoOnEntry": false
+    },
+    "participants": [
+      {
+        "userId": "2",
+        "userName": "Admin User",
+        "joinedAt": "2024-01-14T14:00:00.000Z",
+        "leftAt": "2024-01-14T15:30:00.000Z",
+        "isHost": true,
+        "permissions": {
+          "canShareScreen": true,
+          "canRecord": true,
+          "canChat": true,
+          "canInvite": true
+        }
+      },
+      {
+        "userId": "3",
+        "userName": "Alex Johnson",
+        "joinedAt": "2024-01-14T14:05:00.000Z",
+        "leftAt": "2024-01-14T15:25:00.000Z",
+        "isHost": false,
+        "permissions": {
+          "canShareScreen": false,
+          "canRecord": false,
+          "canChat": true,
+          "canInvite": false
+        }
+      },
+      {
+        "userId": "4",
+        "userName": "Sarah Miller",
+        "joinedAt": "2024-01-14T14:10:00.000Z",
+        "leftAt": "2024-01-14T15:30:00.000Z",
+        "isHost": false,
+        "permissions": {
+          "canShareScreen": false,
+          "canRecord": false,
+          "canChat": true,
+          "canInvite": false
+        }
+      },
+      {
+        "userId": "5",
+        "userName": "David Chen",
+        "joinedAt": "2024-01-14T14:15:00.000Z",
+        "leftAt": "2024-01-14T15:20:00.000Z",
+        "isHost": false,
+        "permissions": {
+          "canShareScreen": false,
+          "canRecord": false,
+          "canChat": true,
+          "canInvite": false
+        }
+      }
+    ],
+    "chat": [
+      {
+        "id": "msg_1",
+        "userId": "2",
+        "userName": "Admin User",
+        "message": "Welcome to the product demo!",
+        "type": "text",
+        "timestamp": "2024-01-14T14:00:30.000Z",
+        "isSystem": false
+      },
+      {
+        "id": "msg_2",
+        "userId": "system",
+        "userName": "System",
+        "message": "Alex Johnson joined the meeting",
+        "type": "system",
+        "timestamp": "2024-01-14T14:05:00.000Z",
+        "isSystem": true
+      },
+      {
+        "id": "msg_3",
+        "userId": "3",
+        "userName": "Alex Johnson",
+        "message": "Excited to see the new features!",
+        "type": "text",
+        "timestamp": "2024-01-14T14:05:15.000Z",
+        "isSystem": false
+      },
+      {
+        "id": "msg_4",
+        "userId": "system",
+        "userName": "System",
+        "message": "Sarah Miller joined the meeting",
+        "type": "system",
+        "timestamp": "2024-01-14T14:10:00.000Z",
+        "isSystem": true
+      },
+      {
+        "id": "msg_5",
+        "userId": "system",
+        "userName": "System",
+        "message": "David Chen joined the meeting",
+        "type": "system",
+        "timestamp": "2024-01-14T14:15:00.000Z",
+        "isSystem": true
+      }
+    ],
+    "recordings": [
+      {
+        "id": "rec_1",
+        "startedAt": "2024-01-14T14:00:00.000Z",
+        "endedAt": "2024-01-14T15:30:00.000Z",
+        "duration": 5400,
+        "size": 1024000000,
+        "url": "/recordings/demo_meeting_2.mp4",
+        "recordedBy": "2"
+      }
+    ],
+    "statistics": {
+      "totalDuration": 5400,
+      "peakParticipants": 4,
+      "messagesSent": 5,
+      "screenShares": 3
+    }
+  },
+  {
+    "id": "demo_meeting_3",
+    "code": "JOIN789GHI",
+    "hostId": "3",
+    "hostName": "Alex Johnson",
+    "title": "Client Meeting",
+    "description": "Quarterly review with important client",
+    "createdAt": "2024-01-13T09:00:00.000Z",
+    "startedAt": "2024-01-13T09:00:00.000Z",
+    "endedAt": "2024-01-13T10:00:00.000Z",
+    "active": false,
+    "type": "scheduled",
+    "settings": {
+      "requireAuth": true,
+      "allowScreenShare": true,
+      "allowRecording": false,
+      "maxParticipants": 10,
+      "waitingRoom": true,
+      "muteOnEntry": true,
+      "videoOnEntry": true
+    },
+    "participants": [
+      {
+        "userId": "3",
+        "userName": "Alex Johnson",
+        "joinedAt": "2024-01-13T09:00:00.000Z",
+        "leftAt": "2024-01-13T10:00:00.000Z",
+        "isHost": true,
+        "permissions": {
+          "canShareScreen": true,
+          "canRecord": false,
+          "canChat": true,
+          "canInvite": true
+        }
+      },
+      {
+        "userId": "4",
+        "userName": "Sarah Miller",
+        "joinedAt": "2024-01-13T09:05:00.000Z",
+        "leftAt": "2024-01-13T09:55:00.000Z",
+        "isHost": false,
+        "permissions": {
+          "canShareScreen": true,
+          "canRecord": false,
+          "canChat": true,
+          "canInvite": false
+        }
+      }
+    ],
+    "chat": [
+      {
+        "id": "msg_1",
+        "userId": "3",
+        "userName": "Alex Johnson",
+        "message": "Welcome to our quarterly review meeting",
+        "type": "text",
+        "timestamp": "2024-01-13T09:00:30.000Z",
+        "isSystem": false
+      },
+      {
+        "id": "msg_2",
+        "userId": "system",
+        "userName": "System",
+        "message": "Sarah Miller joined the meeting",
+        "type": "system",
+        "timestamp": "2024-01-13T09:05:00.000Z",
+        "isSystem": true
+      }
+    ],
+    "recordings": [],
+    "statistics": {
+      "totalDuration": 3600,
+      "peakParticipants": 2,
+      "messagesSent": 2,
+      "screenShares": 1
+    }
+  }
+]

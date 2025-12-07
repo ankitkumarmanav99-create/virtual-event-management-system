@@ -1,0 +1,59 @@
+{
+  "name": "videomeet",
+  "version": "1.0.0",
+  "description": "A professional video conferencing website with chat functionality built with HTML, CSS, JavaScript, and Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "setup": "node -e \"console.log('Setting up VideoMeet...'); console.log('Copy all HTML files to views/ folder'); console.log('Copy all CSS files to public/css/ folder'); console.log('Copy all JS files to public/js/ folder'); console.log('Run: npm install'); console.log('Run: npm start');\"",
+    "test": "echo \"No tests specified\" && exit 0",
+    "clean": "rm -rf node_modules package-lock.json",
+    "reset": "npm run clean && npm install",
+    "check": "node -e \"const fs = require('fs'); const requiredFiles = ['server.js', 'views/index.html', 'views/landing.html', 'views/meeting.html', 'views/join.html', 'public/css/style.css', 'public/css/login.css', 'public/css/meeting.css', 'public/js/auth.js', 'public/js/landing.js', 'public/js/meeting.js', 'public/js/chat.js', 'public/js/join.js']; console.log('Checking required files...'); let missing = []; requiredFiles.forEach(file => { if (!fs.existsSync(file)) { missing.push(file); } }); if (missing.length === 0) { console.log('✓ All files are present'); } else { console.log('✗ Missing files:', missing); }\""
+  },
+  "keywords": [
+    "video-conferencing",
+    "webrtc",
+    "chat",
+    "express",
+    "socket.io",
+    "video-chat",
+    "meeting",
+    "collaboration"
+  ],
+  "author": "VideoMeet Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/videomeet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/videomeet/issues"
+  },
+  "homepage": "https://github.com/yourusername/videomeet#readme",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.5.4"
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "peerDependencies": {},
+  "bundledDependencies": [],
+  "files": [
+    "server.js",
+    "package.json",
+    "README.md",
+    "views/",
+    "public/",
+    ".gitignore"
+  ],
+  "config": {
+    "port": 3000
+  },
+  "private": true
+}

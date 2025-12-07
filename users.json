@@ -1,0 +1,52 @@
+[
+  {
+    "id": "1",
+    "username": "demo",
+    "email": "demo@videomeet.com",
+    "password": "demo123",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "lastLogin": null,
+    "profile": {
+      "displayName": "Demo User",
+      "avatar": null,
+      "bio": "Welcome to VideoMeet demo!",
+      "preferences": {
+        "theme": "light",
+        "language": "en",
+        "notifications": true,
+        "autoJoinVideo": true,
+        "autoJoinAudio": true
+      }
+    },
+    "stats": {
+      "meetingsHosted": 0,
+      "meetingsJoined": 0,
+      "totalMeetingTime": 0
+    }
+  },
+  {
+    "id": "2",
+    "username": "admin",
+    "email": "admin@videomeet.com",
+    "password": "admin123",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "lastLogin": null,
+    "profile": {
+      "displayName": "Administrator",
+      "avatar": null,
+      "bio": "System administrator account",
+      "preferences": {
+        "theme": "dark",
+        "language": "en",
+        "notifications": true,
+        "autoJoinVideo": true,
+        "autoJoinAudio": false
+      }
+    },
+    "stats": {
+      "meetingsHosted": 0,
+      "meetingsJoined": 0,
+      "totalMeetingTime": 0
+    }
+  }
+]

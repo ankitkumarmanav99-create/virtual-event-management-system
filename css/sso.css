@@ -1,0 +1,7 @@
+body{font-family:Inter,Arial,Helvetica,sans-serif;background:#fafafa;color:#111;margin:0}
+.site-header{display:flex;align-items:center;gap:12px;padding:18px 20px;background:#fff;border-bottom:1px solid #eee}
+.container{max-width:720px;margin:28px auto;padding:0 20px}
+.card{background:white;padding:18px;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+input[type=email]{width:100%;padding:10px;border-radius:6px;border:1px solid #e6e6e6;margin-top:8px}
+button{margin-top:12px;padding:10px 14px;background:#0f172a;color:#fff;border:none;border-radius:8px;cursor:pointer}
+.status{margin-top:12px;color:#374151}

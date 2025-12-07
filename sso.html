@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EventSphere — SSO</title>
+  <link rel="stylesheet" href="/css/sso.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/ai-embed.css">
+</head>
+<body>
+  <header class="site-header"><a href="/index.html" class="logo">EventSphere</a><h1>Single Sign-On (SSO)</h1></header>
+  <main class="container">
+    <section class="card">
+      <h2>Sign in with your organization</h2>
+      <p>This page demonstrates an SSO flow (demo client only).</p>
+      <form id="ssoForm">
+        <label>Organization Email</label>
+        <input id="orgEmail" type="email" placeholder="you@org.com" required />
+        <button type="submit">Sign in with SSO</button>
+      </form>
+      <div id="ssoStatus" class="status"></div>
+    </section>
+  </main>
+  <script src="/js/sso.js"></script>
+  <script src="js/ai-embed.js"></script>
+</body>
+</html>

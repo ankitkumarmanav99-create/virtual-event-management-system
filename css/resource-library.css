@@ -1,0 +1,165 @@
+/* resource-library.css - Styles for Resource Library Page */
+
+/* Import base styles */
+@import url('style.css');
+
+/* Hero Section with Custom Background */
+.hero {
+    min-height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* Offset for fixed navbar */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.ctfassets.net/nnkxuzam4k38/1J6b82cZQYoPFz9Uv3T8xu/24d1b92f09c9232535565d5378502604/samuel-zeller-medium-b832fe04.jpg') no-repeat center center;
+    background-size: cover;
+    color: var(--white);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--space-3xl) var(--space-lg);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: var(--space-lg);
+    color: var(--white);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Resources Section */
+.resources {
+    padding: var(--space-3xl) 0;
+    background: var(--light);
+}
+
+.resources .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--space-xl);
+}
+
+.resource-card {
+    background: var(--white);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition);
+    text-align: center;
+    border: 1px solid var(--gray-lighter);
+}
+
+.resource-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary);
+}
+
+.resource-icon {
+    width: 100px;
+    height: 100px;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-lg);
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.resource-card h3 {
+    margin-bottom: var(--space-md);
+    color: var(--dark);
+    font-size: 1.5rem;
+}
+
+.resource-card p {
+    color: var(--gray);
+    margin-bottom: var(--space-xl);
+    line-height: 1.6;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-lg) var(--space-xl);
+    background: var(--gradient-primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    text-decoration: none;
+    box-shadow: var(--shadow);
+}
+
+.btn-download:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.125rem;
+    }
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .resource-card {
+        padding: var(--space-lg);
+    }
+
+    .resource-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 50vh;
+        padding-top: 60px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .resources {
+        padding: var(--space-2xl) 0;
+    }
+}

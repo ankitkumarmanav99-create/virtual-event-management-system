@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventSphere — Virtual Event Management System | Seamless Video Conferencing</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-video"></i>
+                <span>EventSphere</span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How it Works</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="schedule.html" class="nav-link">Schedule</a>
+                <a href="resource-library.html" class="nav-link">Resource Library</a>
+            </div>
+            
+            <div class="nav-actions">
+                <div class="user-profile" id="userProfile">
+                    <i class="fas fa-user-circle"></i>
+                    <span id="usernameDisplay">Guest</span>
+                </div>
+                <button class="btn-logout" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </button>
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Teams Meeting Rooms Background -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Professional Video Meetings Made Simple</h1>
+                <p class="hero-subtitle">Connect with your team, clients, and friends in high-definition video conferences with built-in chat. No downloads required.</p>
+                
+                <div class="hero-actions">
+                    <button class="btn-primary btn-large" id="startMeetingBtn">
+                        <i class="fas fa-video"></i>
+                        Start New Meeting
+                    </button>
+                    <div class="join-section">
+                        <input type="text" id="meetingCode" placeholder="Enter meeting code" maxlength="9">
+                        <button class="btn-secondary" id="joinMeetingBtn">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Join
+                        </button>
+                    </div>
+   
+                    <div class="external-meetings">
+                        <p>Or use popular platforms:</p>
+                        <div class="external-buttons">
+                            <a href="https://meet.google.com/new" class="btn-external google" target="_blank">
+                                <i class="fab fa-google"></i>
+                                Google Meet
+                            </a>
+                            <a href="https://meeting.zoho.com/" class="btn-external zoho" target="_blank">
+                                <i class="fas fa-video"></i>
+                                Zoho Meeting
+                            </a>
+                            <a href="https://discord.com/channels/@me" class="btn-external discord" target="_blank">
+                                <i class="fab fa-discord"></i>
+                                Discord
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <div class="floating-card">
+                    <div class="card-header">
+                        <div class="active-dot"></div>
+                        <span>Live Meeting Preview</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="video-grid-preview">
+                            <div class="video-preview">
+                                <i class="fas fa-user"></i>
+                                <span>You</span>
+                            </div>
+                            <div class="video-preview">
+                                <i class="fas fa-user"></i>
+                                <span>Team Member</span>
+                            </div>
+                            <div class="video-preview">
+                                <i class="fas fa-user"></i>
+                                <span>Client</span>
+                            </div>
+                            <div class="video-preview">
+                                <i class="fas fa-user"></i>
+                                <span>Guest</span>
+                            </div>
+                        </div>
+                        <div class="chat-preview">
+                            <div class="message incoming">
+                                <strong>Alex:</strong> Can everyone see my screen?
+                            </div>
+                            <div class="message outgoing">
+                                <strong>You:</strong> Yes, looks perfect!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2>Powerful Features</h2>
+            <p>Everything you need for productive meetings</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-hd-video"></i>
+                </div>
+                <h3>HD Video & Audio</h3>
+                <p>Crystal clear 720p/1080p video quality with noise cancellation for professional meetings.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-comment-dots"></i>
+                </div>
+                <h3>Real-time Chat</h3>
+                <p>Send messages, links, and files during meetings without interrupting the conversation.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Secure & Private</h3>
+                <p>End-to-end encryption and secure meeting rooms with password protection options.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h3>Easy Invites</h3>
+                <p>Share meeting links or codes with one click. No account needed for guests to join.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Mobile Ready</h3>
+                <p>Works perfectly on all devices - desktop, tablet, and mobile phones.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-history"></i>
+                </div>
+                <h3>Meeting History</h3>
+                <p>Keep track of all your past meetings, participants, and chat history.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-header">
+            <h2>How It Works</h2>
+            <p>Get started in three simple steps</p>
+        </div>
+        
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Create or Join</h3>
+                    <p>Start a new meeting instantly or join an existing one with a simple code.</p>
+                </div>
+                <div class="step-illustration">
+                    <i class="fas fa-door-open"></i>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Invite Participants</h3>
+                    <p>Share your meeting link or code with team members, clients, or friends.</p>
+                </div>
+                <div class="step-illustration">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Collaborate</h3>
+                    <p>Conduct your meeting with HD video, audio, and real-time chat features.</p>
+                </div>
+                <div class="step-illustration">
+                    <i class="fas fa-comments"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Start Section -->
+    <section class="quick-start">
+        <div class="section-header">
+            <h2>Ready to Connect?</h2>
+            <p>Start your first meeting in seconds</p>
+        </div>
+        
+        <div class="quick-actions">
+            <button class="btn-primary btn-xlarge" id="quickStartBtn">
+                <i class="fas fa-rocket"></i>
+                Start Instant Meeting
+            </button>
+            
+            <div class="meeting-code-generator">
+                <h4>Need a scheduled meeting?</h4>
+                <div class="code-display" id="generatedCode">Click to generate</div>
+                <button class="btn-outline" id="generateCodeBtn">
+                    <i class="fas fa-random"></i>
+                    Generate Meeting Code
+                </button>
+                <!-- Create Scheduled Meeting button removed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="about">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <i class="fas fa-video"></i>
+                    <span>EventSphere</span>
+                </div>
+                <p>Professional video conferencing solution for teams of all sizes.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Product</h4>
+                <a href="#">Features</a>
+                <a href="#">Pricing</a>
+                <a href="#">API</a>
+                <a href="#">Documentation</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact</a>
+                <a href="#">Blog</a>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">GDPR</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 EventSphere. All rights reserved.</p>
+            <p>Made with <i class="fas fa-heart" style="color: #ff4757;"></i> for seamless communication</p>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script src="/js/landing.js"></script>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget">
+        <div id="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div id="chatbot-popup">
+            <div id="chatbot-header">
+                <span>EventSphere Assistant</span>
+                <button id="chatbot-close">&times;</button>
+            </div>
+            <div id="chatbot-messages">
+                <div class="message bot-message">
+                    <div class="message-content">Hello! I'm your EventSphere assistant. How can I help you today?</div>
+                </div>
+            </div>
+            <div id="chatbot-input">
+                <input type="text" id="chatbot-input-field" placeholder="Type your message...">
+                <button id="chatbot-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

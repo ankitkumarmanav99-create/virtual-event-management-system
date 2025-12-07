@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventSphere — Virtual Event Management System | Join Meeting</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to join page */
+        .join-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .join-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
+            animation: slideUp 0.5s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .join-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px 30px;
+            text-align: center;
+        }
+        
+        .join-header .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* tagline removed */
+        
+        .join-header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .join-header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        .join-body {
+            padding: 40px 30px;
+        }
+        
+        .input-section {
+            margin-bottom: 30px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #333;
+            font-size: 0.95rem;
+        }
+        
+        .meeting-code-input {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .code-part {
+            flex: 1;
+            height: 60px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            outline: none;
+            transition: all 0.3s ease;
+            color: #333;
+        }
+        
+        .code-part:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .code-part.filled {
+            border-color: #667eea;
+            background-color: #f8f9ff;
+        }
+        
+        .text-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .text-input:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            outline: none;
+        }
+        
+        .join-options {
+            background: #f8f9ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .option-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e1e5e9;
+        }
+        
+        .option-item:last-child {
+            border-bottom: none;
+        }
+        
+        .option-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+        
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: #667eea;
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(24px);
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn-primary {
+            flex: 1;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-secondary {
+            flex: 1;
+            padding: 16px;
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-secondary:hover {
+            background: #f8f9ff;
+        }
+        
+        .recent-meetings {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e1e5e9;
+        }
+        
+        .recent-meetings h3 {
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .meeting-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .meeting-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .meeting-item:hover {
+            background: #eef1ff;
+            transform: translateX(5px);
+        }
+        
+        .meeting-info h4 {
+            margin: 0 0 5px 0;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .meeting-info p {
+            margin: 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .meeting-status {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .status-dot.active {
+            background-color: #4CAF50;
+        }
+        
+        .status-dot.ended {
+            background-color: #f44336;
+        }
+        
+        .back-home {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e5e9;
+        }
+        
+        .back-home a {
+            color: #667eea;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+        
+        .back-home a:hover {
+            text-decoration: underline;
+        }
+        
+        .error-message {
+            background-color: #fee;
+            color: #c33;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .error-message.show {
+            display: flex;
+            animation: shake 0.5s;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 480px) {
+            .join-container {
+                padding: 10px;
+            }
+            
+            .join-header {
+                padding: 30px 20px 20px;
+            }
+            
+            .join-body {
+                padding: 30px 20px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .meeting-code-input {
+                flex-wrap: wrap;
+            }
+            
+            .code-part {
+                flex: 0 0 calc(33.333% - 7px);
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="join-container">
+        <div class="join-card">
+            <div class="join-header">
+                <div class="logo">
+                    <i class="fas fa-video"></i>
+                    <span>EventSphere</span>
+                </div>
+                <h1>Join a Meeting</h1>
+                <p>Enter the meeting code provided by the host</p>
+            </div>
+            
+            <div class="join-body">
+                <!-- Error Message -->
+                <div class="error-message" id="errorMessage">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span id="errorText">Invalid meeting code. Please check and try again.</span>
+                </div>
+                
+                <!-- Meeting Code Input -->
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="meetingCode">Meeting Code</label>
+                        <div class="meeting-code-input">
+                            <input type="text" 
+                                   class="code-part" 
+                                   maxlength="3" 
+                                   data-index="0"
+                                   placeholder="ABC">
+                            <span class="separator">-</span>
+                            <input type="text" 
+                                   class="code-part" 
+                                   maxlength="3" 
+                                   data-index="1"
+                                   placeholder="DEF">
+                            <span class="separator">-</span>
+                            <input type="text" 
+                                   class="code-part" 
+                                   maxlength="3" 
+                                   data-index="2"
+                                   placeholder="GHI">
+                        </div>
+                        <p class="hint">Format: ABC-DEF-GHI (letters and numbers only)</p>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="displayName">Your Name</label>
+                        <input type="text" 
+                               id="displayName" 
+                               class="text-input" 
+                               placeholder="Enter your name for the meeting"
+                               value=""
+                               maxlength="50">
+                    </div>
+                </div>
+                
+                <!-- Join Options -->
+                <div class="join-options">
+                    <div class="option-item">
+                        <div class="option-label">
+                            <i class="fas fa-video" style="color: #667eea;"></i>
+                            <span>Join with video</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="joinWithVideo" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="option-item">
+                        <div class="option-label">
+                            <i class="fas fa-microphone" style="color: #667eea;"></i>
+                            <span>Join with audio</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="joinWithAudio" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="option-item">
+                        <div class="option-label">
+                            <i class="fas fa-shield-alt" style="color: #667eea;"></i>
+                            <span>Enable meeting encryption</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="enableEncryption" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="button-group">
+                    <button class="btn-primary" id="joinMeetingBtn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Join Meeting
+                    </button>
+                    <button class="btn-secondary" id="cancelBtn">
+                        <i class="fas fa-times"></i>
+                        Cancel
+                    </button>
+                </div>
+                
+                <!-- Recent Meetings (if any) -->
+                <div class="recent-meetings" id="recentMeetings">
+                    <h3>Recent Meetings</h3>
+                    <div class="meeting-list" id="meetingList">
+                        <!-- Recent meetings will be dynamically added here -->
+                        <div class="empty-state">
+                            <p style="text-align: center; color: #666; font-style: italic;">
+                                No recent meetings found
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Back to Home -->
+                <div class="back-home">
+                    <a href="/landing.html" id="backToHome">
+                        <i class="fas fa-arrow-left"></i>
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Help Modal -->
+        <div class="modal" id="helpModal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Need Help Joining?</h3>
+                    <button class="modal-close" id="closeHelpModal">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4>Where to find the meeting code?</h4>
+                    <ul>
+                        <li>Check your email invitation from the host</li>
+                        <li>Ask the meeting host to share the code</li>
+                        <li>Look in your calendar invitation</li>
+                        <li>Check team chat channels (Slack, Teams, etc.)</li>
+                    </ul>
+                    
+                    <h4>Meeting Code Format</h4>
+                    <p>Meeting codes are 9 characters (letters and numbers) in the format: <strong>XXX-XXX-XXX</strong></p>
+                    
+                    <h4>Common Issues</h4>
+                    <ul>
+                        <li>Ensure you're using the correct meeting code</li>
+                        <li>Check your internet connection</li>
+                        <li>Make sure the meeting hasn't ended</li>
+                        <li>Try refreshing the page</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-secondary" id="closeHelpBtn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/join.js"></script>
+</body>
+</html>
